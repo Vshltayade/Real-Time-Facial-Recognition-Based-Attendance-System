@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Records</title>
+</head>
+<body>
+    
+<h2>Attendance List</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Course</th> <!-- ✅ ADDED -->
+        </tr>
+    </thead>
+    <tbody id="records"></tbody>
+</table>
+
+<script>
+fetch("http://127.0.0.1:5000/attendance")
+.then(res => res.json())
+.then(data => {
+    let table = document.getElementById("records");
+    table.innerHTML = ""; // clear table
+
+    data.forEach(row => {
+        table.innerHTML += `
+        <tr>
+            <td>${row.student_name}</td>
+            <td>${row.date}</td>
+            <td>${row.time}</td>
+            <td>${row.course_name || '-'}</td>
+        </tr>`;
+    });
+});
+</script>
+
+</body>
+</html>

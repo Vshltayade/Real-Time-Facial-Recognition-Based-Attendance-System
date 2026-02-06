@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Attendance Management System</h1>
+
+<h2>Attendance Records</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody id="records"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
+<button onclick="exportCSV()" class="export-btn">Export to CSV</button>
